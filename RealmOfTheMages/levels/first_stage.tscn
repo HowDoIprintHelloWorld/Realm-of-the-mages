@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://4bs7t3lbq7nu"]
+
+[ext_resource type="Script" path="res://levels/stages.gd" id="1_pmw86"]
+[ext_resource type="PackedScene" uid="uid://duql16gdwtgwi" path="res://characters/hero.tscn" id="1_q505p"]
+[ext_resource type="Theme" uid="uid://c5jnqrv748le7" path="res://assets/healthbar.tres" id="2_agxv5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrjjq"]
+bg_color = Color(0.231373, 0.368627, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q515"]
+bg_color = Color(0.192157, 0.639216, 0.054902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll0s4"]
+bg_color = Color(0.482353, 0.627451, 0.980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6urr"]
+bg_color = Color(0.133333, 0.368627, 0.815686, 1)
+
+[node name="firstStage" type="Node2D"]
+scale = Vector2(1, 1.00252)
+script = ExtResource("1_pmw86")
+
+[node name="hero" parent="." instance=ExtResource("1_q505p")]
+position = Vector2(372, 343.135)
+scale = Vector2(0.788344, 0.788344)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="progressBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -21.0
+offset_right = 674.0
+offset_bottom = 9.0
+grow_vertical = 0
+theme = ExtResource("2_agxv5")
+theme_override_styles/background = SubResource("StyleBoxFlat_nrjjq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3q515")
+value = 50.0
+rounded = true
+show_percentage = false
+
+[node name="manaBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 58.0
+offset_right = 347.0
+offset_bottom = 84.0
+theme = ExtResource("2_agxv5")
+theme_override_styles/background = SubResource("StyleBoxFlat_ll0s4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f6urr")
+value = 50.0
+rounded = true
+show_percentage = false

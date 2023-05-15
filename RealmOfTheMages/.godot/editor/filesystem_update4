@@ -1,0 +1,5 @@
+res://characters/hero.tscn
+res://characters/hero.gd
+res://levels/first_stage.tscn
+res://assets/healthbar.tres
+res://levels/stages.gd

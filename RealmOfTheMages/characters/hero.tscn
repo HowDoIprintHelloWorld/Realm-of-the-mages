@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://duql16gdwtgwi"]
+
+[ext_resource type="Texture2D" uid="uid://chogb8f4jrcps" path="res://assets/heronew.png" id="1_20fps"]
+[ext_resource type="Script" path="res://characters/hero.gd" id="1_btn1f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be4wx"]
+radius = 49.0
+height = 180.0
+
+[node name="hero" type="CharacterBody2D"]
+script = ExtResource("1_btn1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.161719, 0.161719)
+texture = ExtResource("1_20fps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, -4)
+shape = SubResource("CapsuleShape2D_be4wx")
